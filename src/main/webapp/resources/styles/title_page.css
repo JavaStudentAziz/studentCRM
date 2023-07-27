@@ -1,0 +1,28 @@
+body {
+    background-color: rgba(82, 146, 124, 0.7);
+}
+.main-block {
+    display: flex;
+    flex-direction: column;
+}
+.title {
+    background-color: aliceblue;
+    text-align: center;
+    margin: 10px 0px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+.flex-link {
+    margin-top: 3%;
+    display: flex;
+    justify-content: space-between;
+}
+a {
+    color: black;
+    background-color: aliceblue;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 24px;
+    text-decoration: none;
+}
