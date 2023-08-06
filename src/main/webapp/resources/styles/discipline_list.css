@@ -22,34 +22,13 @@ body {
 .navbar-border {
     border-radius: 5px;
 }
-.flex-link {
+.disc-list {
+    margin-top: 5%;
+    margin-bottom: 2%;
+}
+.disc-page {
     display: flex;
-    margin-top: 40px;
-}
-.flex-buttons-1 {
-    width: 560px;
-    margin-right: 20px;
-}
-.flex-buttons-2 {
-    width: 350px;
-}
-.buttons-1 {
-    display: flex;
-    flex-direction: column;
-}
-.buttons-2 {
-    display: flex;
-    flex-direction: column;
-}
-button {
-    border: 2px solid black;
-    border-radius: 5px;
-    margin-top: 20px;
-    padding: 5px;
-    font-size: 24px;
-}
-.student-list {
-    margin-top: 2%;
+    flex-direction: row;
 }
 table {
     border: 1px solid black;
@@ -58,7 +37,7 @@ table {
 }
 tr {
     border: 1px solid black;
-    font-size: 22px;
+    font-size: 20px;
 }
 th {
     background-color: rgb(168, 168, 168);
@@ -66,14 +45,19 @@ th {
 td,th {
     border: 1px solid black;
     text-align: center;
-    padding: 20px 5px;
+    padding: 40px 10px;
+    text-align: start;
 }
-.date-in {
-    width: 20%;
+.col-sm-7 {
+    display: flex;
+    flex-direction: column;
 }
-.st-group {
-    width: 15%;
-}
-.checkbox {
-    width: 5%;
+button {
+    font-size: 20px;
+    width: 60%;
+    margin-left: 10%;
+    margin-bottom: 5%;
+    padding: 1%;
+    border: 3px solid black;
+    border-radius: 10px;
 }

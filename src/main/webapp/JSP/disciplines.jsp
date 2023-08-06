@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student List</title>
+    <title>Discipline_list</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="../resources/styles/student_list.css">
+    <link rel="stylesheet" href="../resources/styles/discipline_list.css">
 </head>
 <body>
-<div class="container first-container">
+<div class="container">
     <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-border main-block">
         <div class="container-fluid">
             <div class="col-sm-10">
@@ -34,54 +34,46 @@
             </div>
         </div>
     </nav>
-    <div class="second-block">
-        <div class="flex-link">
-            <div class="buttons-1">
-                <button class="flex-buttons-1">Посмотреть успеваемость выбранных студентов</button>
-                <button class="flex-buttons-1">Модифицировать выбранного студента</button>
-            </div>
-            <div  class="buttons-2">
-                <a href="student_creating.html"><button class="flex-buttons-2">Создать Студента...</button></a>
-                <button class="flex-buttons-2">Удалить выбранных студентов</button>
-            </div>
-        </div>
-        <div>
-            <h2 class="student-list">Cписок студентов</h1>
-        </div>
-        <div>
-            <table class="st-table">
-                <tr class="first-row">
+    <div>
+        <h2 class="disc-list">Список дисциплин</h2>
+    </div>
+    <div class="disc-page">
+        <div class="col-sm-5">
+            <table class="disc-table">
+                <tr>
                     <th></th>
-                    <th>Фамилия</th>
-                    <th>Имя</th>
-                    <th class="st-group">Группа</th>
-                    <th class="date-in">Дата поступления</th>
+                    <th>Наименование Дисциплины</th>
                 </tr>
                 <tr>
                     <td><input type="checkbox"></td>
-                    <td>Cидоров</td>
-                    <td>Cидор</td>
-                    <td>КТ-21</td>
-                    <td>20.09.2011</td>
-                </tr>
-                <tr>
-                    <td class="checkbox"><input type="checkbox"></td>
-                    <td>Иванов</td>
-                    <td>Иван</td>
-                    <td>КТ-21</td>
-                    <td>20.09.2011</td>
+                    <td>Высшая математика</td>
                 </tr>
                 <tr>
                     <td><input type="checkbox"></td>
-                    <td>Петров</td>
-                    <td>Пётр</td>
-                    <td>КТ-21</td>
-                    <td>20.09.2011</td>
+                    <td>Информатика</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>Политология</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>История науки и техники</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>Управление проектами</td>
                 </tr>
             </table>
         </div>
+        <div class="col-sm-7">
+            <button>Создать дисциплину...</button>
+            <button>Модифицировать выбраннную дисциплину...</button>
+            <button>Удалить выбраннную дисциплину...</button>
+        </div>
     </div>
 </div>
+
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
 </body>
