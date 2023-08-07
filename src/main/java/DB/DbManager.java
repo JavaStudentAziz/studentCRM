@@ -22,7 +22,7 @@ public class DbManager implements IDbManager{
                     "root","Diarmaid98");
 
             Statement statement = connection.createStatement();
-            ResultSet rs = statement.executeQuery("SELECT * FROM student where status = 1;");
+            ResultSet rs = statement.executeQuery("SELECT * FROM java_7_student.student where status = 1;");
             while (rs.next()) {
 
                 Student student = new Student();
