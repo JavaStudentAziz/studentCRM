@@ -38,7 +38,23 @@ public class DbManager implements IDbManager{
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         return res;
+    }
+    public void createStudent (String surname, String name,String group,String date) {
+
+        List<Student> res = new ArrayList<>();
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection connection = DriverManager.getConnection(
+                    "jdbc:mysql://localhost:3306/java_7_student",
+                    "root", "Diarmaid98");
+
+            Statement statement = connection.createStatement();
+            statement.execute("INSERT INTO `student` " +
+                    "(`surname`, `name`, `group`, `date_in`)" +
+                    " VALUES ('"+surname+"', '"+name+"', '"+group+"', '"+date+"');\n");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

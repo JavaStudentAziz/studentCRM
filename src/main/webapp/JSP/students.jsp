@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,7 +45,7 @@
                 <button class="flex-buttons-1">Модифицировать выбранного студента</button>
             </div>
             <div class="buttons-2">
-                <a href="student_creating.html">
+                <a href="/student_creating">
                     <button class="flex-buttons-2">Создать Студента...</button>
                 </a>
                 <button class="flex-buttons-2">Удалить выбранных студентов</button>
