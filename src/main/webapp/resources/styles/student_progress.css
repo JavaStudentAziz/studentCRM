@@ -1,0 +1,86 @@
+body {
+    background-color: rgba(82, 146, 124, 0.7);
+}
+
+.container {
+    background-color: rgba(125, 209, 180, 0.7);
+    padding-bottom: 10%;
+    padding-top: 1px;
+}
+
+.main-block {
+    margin-top: 1%;
+    border: 4px solid black;
+}
+
+.col-sm-10 {
+    text-align: center;
+}
+
+.col-sm-2 {
+    margin-left: 5%;
+}
+
+.system-item {
+    font-size: 24px;
+}
+
+.navbar-border {
+    border-radius: 5px;
+}
+
+h2 {
+    margin-top: 2%;
+}
+
+table {
+    margin-top: 1%;
+    border: 1px solid black;
+    background-color: aliceblue;
+    width: 100%;
+}
+
+tr {
+    border: 1px solid black;
+    font-size: 18px;
+}
+
+th {
+    background-color: rgb(168, 168, 168);
+}
+
+td, th {
+    border: 1px solid black;
+    text-align: center;
+    padding: 5px 5px;
+}
+
+.discipline-mark {
+    font-size: 22px;
+}
+
+.performance {
+    display: flex;
+    flex-direction: row;
+    margin-top: 3%;
+}
+
+.form-select {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    width: 50%;
+}
+
+.col-sm-7 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 1%;
+    font-size: 20px;
+}
+.choose {
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 1%;
+    width: 25%;
+}

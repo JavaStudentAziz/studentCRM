@@ -1,15 +1,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Student</title>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <title>Student Progress</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="../resources/styles/student_creating.css">
-</head>
+    <link rel="stylesheet" href="../resources/styles/student_progress.css">
 <body>
 <div class="container">
     <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-border main-block">
@@ -38,51 +37,55 @@
             </div>
         </div>
     </nav>
-    <div class="intro-text">
-        <h3>Для создания студента заполните все поля и нажмите кнопку "Создать"</h3>
-    </div>
-    <form action="/student_creating" method="post">
-        <div>
+    <h2>Отображена успеваемость для следующего студента:</h2>
+    <table>
+        <tr>
+            <th>Фамилия</th>
+            <th>Имя</th>
+            <th>Группа</th>
+            <th>Дата поступления</th>
+        </tr>
+        <tr>
+            <td>${student.surname}</td>
+            <td>${student.name}</td>
+            <td>${student.group}</td>
+            <td>${student.date_in}</td>
+        </tr>
+    </table>
+    <div class="performance">
+        <div class="col-sm-5">
             <table>
-                <tr>
-                    <td>Фамилия</td>
-                    <td><input type="text" name="surname" required></td>
+                <tr class="discipline-mark">
+                    <th>Дисциплина</th>
+                    <th>Оценка</th>
                 </tr>
-                <tr>
-                    <td>Имя</td>
-                    <td><input type="text" name="name" required></td>
-                </tr>
-                <tr>
-                    <td>Группа</td>
-                    <td><input type="text" name="group" required></td>
-                </tr>
-                <tr>
-                    <td>Дата поступления</td>
-                    <td><input type="text" id="datepicker" name="date"></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td class="create-button">
-                        <button class="create">Cоздать</button>
-                    </td>
-                </tr>
+                <c:forEach items="${dm}" var="dismark">
+                    <tr class="discipline-mark">
+                        <td>${dismark.nameD}</td>
+                        <td>${dismark.nameM}</td>
+                    </tr>
+                </c:forEach>
             </table>
         </div>
-    </form>
-    <div class="outro-text">
-        <h4><i>Поля не должны быть пустыми!</i></h4>
+        <form class="col-sm-7" action="/student_progress" method="get">
+        <div>
+            <span>Выбрать семестр</span>
+            <select class="form-select">
+                <c:forEach items="${terms}" var="t">
+                    <option value="${t.id}" name="selectId"
+                            <c:if test="${t.id == first.id}">
+                                selected
+                            </c:if>
+                    >${t.name}</option>
+                </c:forEach>
+            </select>
+            <button class="choose">Выбрать</button>
+        </div>
+            <input type="hidden" name="progressStudentHidden" value="${student.id}">
+        </form>
     </div>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-<script>
-    $( function() {
-        $( "#datepicker" ).datepicker({
-            showButtonPanel: true
-        });
-    } );
-</script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
@@ -90,5 +93,6 @@
         integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
         crossorigin="anonymous"></script>
 </body>
+</head>
 </html>
 

@@ -41,14 +41,14 @@
     <div class="second-block">
         <div class="flex-link">
             <div class="buttons-1">
-                <button class="flex-buttons-1">Посмотреть успеваемость выбранных студентов</button>
-                <button class="flex-buttons-1">Модифицировать выбранного студента</button>
+                <button class="flex-buttons-1" onclick="showStudentProgress()">Посмотреть успеваемость выбранных студентов</button>
+                <button class="flex-buttons-1" onclick="modifyStudent()">Модифицировать выбранного студента</button>
             </div>
             <div class="buttons-2">
                 <a href="/student_creating">
                     <button class="flex-buttons-2">Создать Студента...</button>
                 </a>
-                <button class="flex-buttons-2">Удалить выбранных студентов</button>
+                <button class="flex-buttons-2" onclick="deleteStudent()">Удалить выбранных студентов</button>
             </div>
         </div>
         <div>
@@ -65,7 +65,7 @@
                 </tr>
                 <c:forEach items="${students}" var="st">
                     <tr>
-                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox" value="${st.id}" name="idStudent"></td>
                         <td>${st.surname}</td>
                         <td>${st.name}</td>
                         <td>${st.group}</td>
@@ -76,6 +76,18 @@
         </div>
     </div>
 </div>
+
+<form id="deleteStudentForm" action="/student_delete" method="post">
+    <input type="hidden" id="deleteStudentHidden" name="deleteStudentHidden">
+</form>
+<form id="modifyStudentForm" action="/student_modify" method="get">
+    <input type="hidden" id="modifyStudentHidden" name="modifyStudentHidden">
+</form>
+<form id="progressStudentForm" action="/student_progress" method="get">
+    <input type="hidden" id="progressStudentHidden" name="progressStudentHidden">
+</form>
+
+<script src="../resources/js/function.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
